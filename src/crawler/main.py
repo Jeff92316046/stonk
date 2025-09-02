@@ -20,5 +20,5 @@ def broker_trade_daily():
 if __name__ == "__main__":
     serve(
         main.to_deployment(name="stock_crawler", cron="0 0 * * 7"),
-        broker_trade_daily.to_deployment(name="broker_trade_daily", cron="30 9 * * *"),
+        broker_trade_daily.to_deployment(name="broker_trade_daily", cron="30 9 * * 1-5"),
     )
