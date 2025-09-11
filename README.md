@@ -3,7 +3,7 @@
 ## 簡介 (Introduction)
 本專案利用 Prefect 建立的 Stock Data Pipeline，透過 Selenium 自動爬取台灣公開的集保戶股權分散表跟每日交易日報，並使用 Streamlit 進行資料視覺化。
 
-This project leverages **Prefect** to build a **Stock Data Pipeline**, using **Selenium** to scrape publicly available Taiwan Depository & Clearing Corporation (TDCC) shareholder distribution data** and Streamlit for data visualization.
+This project leverages **Prefect** to build a **Stock Data Pipeline**, using **Selenium** to scrape publicly available Taiwan Depository & Clearing Corporation (TDCC) shareholder distribution data and Streamlit for data visualization.
 
 ## 啟動方法 (Getting Started)
 ### **需求 (Prerequisites)**
