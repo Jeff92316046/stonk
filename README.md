@@ -1,14 +1,14 @@
-# Stock Data Pipeline
+# Stonk
 
 ## 簡介 (Introduction)
-本專案利用 Prefect 建立 **Stock Data Pipeline**，透過 Selenium 自動爬取台灣公開的 **集保戶股權分散表**，並使用 Streamlit 進行 **股東級距篩選** 的資料視覺化。
+本專案利用 Prefect 建立的 Stock Data Pipeline，透過 Selenium 自動爬取台灣公開的集保戶股權分散表跟每日交易日報，並使用 Streamlit 進行資料視覺化。
 
-This project leverages **Prefect** to build a **Stock Data Pipeline**, using **Selenium** to scrape publicly available **Taiwan Depository & Clearing Corporation (TDCC) shareholder distribution data** and **Streamlit** for shareholder tier-based data visualization.
+This project leverages **Prefect** to build a **Stock Data Pipeline**, using **Selenium** to scrape publicly available Taiwan Depository & Clearing Corporation (TDCC) shareholder distribution data** and Streamlit for data visualization.
 
 ## 啟動方法 (Getting Started)
 ### **需求 (Prerequisites)**
 - Install Docker
-- Install poetry
+- Install uv
 
 ### **環境模式 (Environment Modes)**
 - `MODE=dev` ：本地測試用 (Local testing mode)
@@ -27,14 +27,14 @@ cp .env.sample .env
 docker compose up -d
 ```
 
-- 使用 poetry 啟動專案
+- 使用 uv 啟動專案
 ```bash
-poetry install
-poetry run python src/crawler/main.py
+uv sync
+uv python src/crawler/main.py
 ```
 
 ## 目前功能 (Current Features)
-- **自動化資料抓取**：定期從 **TDCC** 爬取 **集保戶股權分散表** 資料。
+- **自動化資料抓取**：定期從 **TDCC** 跟 **TWSE** 爬取 **集保戶股權分散表** 與 **每日交易日報** 資料。
 - **資料視覺化**：透過 **Streamlit** 呈現股東級距分布。
 - **可視化流程監控**：使用 **Prefect UI** 監控資料抓取與處理流程。
 
@@ -71,6 +71,7 @@ stock-data-pipeline/
 
 ## 資料來源 (Data Source)
 [台灣集中保管結算所 (TDCC)](https://www.tdcc.com.tw/portal/zh)
+[買賣日報表查詢系統 (TWSE)](https://bsr.twse.com.tw/bshtm/)
 
 > ⚠ **聲明 (Disclaimer)**
 > 本專案僅供學習用途，股票投資有風險，買賣需審慎評估，**本專案不對任何投資行為負責**。
