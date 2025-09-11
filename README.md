@@ -28,10 +28,18 @@ docker compose up -d
 ```
 
 - 使用 uv 啟動專案
-```bash
-uv sync
-uv python src/crawler/main.py
-```
+  - run crawler
+    ```bash
+    uv sync
+    cp src/crawler/main.py src/main.py
+    uv python src/main.py
+    ```
+  - run dashboard
+    ```bash
+    uv sync
+    cp src/dashboard/main.py src/main.py
+    uv python src/main.py
+    ```
 
 ## 目前功能 (Current Features)
 - **自動化資料抓取**：定期從 **TDCC** 跟 **TWSE** 爬取 **集保戶股權分散表** 與 **每日交易日報** 資料。
