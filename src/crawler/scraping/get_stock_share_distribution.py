@@ -22,6 +22,7 @@ STOCK_SHARE_DISTRIBUTION_URL = "https://www.tdcc.com.tw/portal/zh/smWeb/qryStock
 def parse_stocksd_data(table: WebElement, stock_symbol: str, date: str) -> int:
     rows = table.find_elements(TAG_NAME, "tr")
     if len(rows) == 1:  # 處理沒資料的情形
+        upsert_stock_date_by_symbol(stock_symbol, datetime.strptime(date, "%Y%m%d").date())
         return 0
     if len(rows) == 17:  # 處理有補差額的情形
         rows[15], rows[16] = rows[16], rows[15]
